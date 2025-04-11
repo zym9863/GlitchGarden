@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故障花园 - Glitch Garden</title>
+    <style>
+        :root {
+            --deep-space-black: #0A0A0A;
+            --night-blue: #0F1A2F;
+            --humus-brown: #2B2118;
+            --neon-magenta: #FF00FF;
+            --neon-cyan: #00FFFF;
+            --neon-yellow: #FFF200;
+            --bio-green: #7FFF00;
+            --decay-purple: #8A2BE2;
+        }
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: var(--deep-space-black);
+            color: var(--bio-green);
+            font-family: 'Courier New', monospace;
+        }
+        canvas {
+            display: block;
+            mix-blend-mode: screen;
+        }
+        #info {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+            z-index: 100;
+            text-shadow: 2px 0 var(--neon-magenta), -2px 0 var(--neon-cyan);
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="info">故障花园</div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
